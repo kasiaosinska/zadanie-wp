@@ -15,22 +15,12 @@ class Jokes extends Component{
             .then(info => this.setState({jokes:info}))
     }
 
-    showJokes = () => {
-        let list = this.state.jokes;
-        let jokeList = [];
-
-        for(let i = 0; i < list.length; i++) {
-            jokeList[i] = '<li>' + list[i].joke + '</li>';
-        }
-
-        document.getElementById('list').innerHTML=jokeList;
-    };
 
     render() {
         return(
             <div>
                 <ul classID="list">
-                    <div>{this.showJokes()}</div>
+                    <div></div>
                 </ul>
             </div>
         )
