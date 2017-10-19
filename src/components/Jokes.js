@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import Block from './Block';
 
 class Jokes extends Component{
     constructor(props) {
@@ -18,11 +19,7 @@ class Jokes extends Component{
 
     render() {
         return(
-            <div>
-                <ul classID="list">
-                    <div></div>
-                </ul>
-            </div>
+            <Block />
         )
     }
 }
