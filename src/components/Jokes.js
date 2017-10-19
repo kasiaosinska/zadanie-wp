@@ -5,19 +5,33 @@ class Jokes extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            joke: ''
+            jokes: ''
         }
     }
     componentDidMount() {
         fetch(`https://api.icndb.com/jokes`)
             .then(resp => resp.json())
-            .then(data => data.value.joke)
-            .then(info => this.setState({joke:info}))
+            .then(data => data.value)
+            .then(info => this.setState({jokes:info}))
     }
+
+    showJokes = () => {
+        let list = this.state.jokes;
+        let jokeList = [];
+
+        for(let i = 0; i < list.length; i++) {
+            jokeList[i] = '<li>' + list[i].joke + '</li>';
+        }
+
+        document.getElementById('list').innerHTML=jokeList;
+    };
+
     render() {
         return(
             <div>
-                <h1>{this.state.joke}</h1>
+                <ul classID="list">
+                    <div>{this.showJokes()}</div>
+                </ul>
             </div>
         )
     }
