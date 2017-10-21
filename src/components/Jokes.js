@@ -12,7 +12,7 @@ class Jokes extends Component{
         }
     }
 
-    handleIntersection(event) {
+    handleIntersection = (event) => {
         let logo = document.querySelector('.logo');
         // let joke = document.getElementsByClassName('box').innerText;
         // let check = joke.includes(' can ', 0);
@@ -25,7 +25,7 @@ class Jokes extends Component{
         else {
             logo.style.display = 'none';
         }
-    }
+    };
 
     componentDidMount() {
         fetch(`https://api.icndb.com/jokes`)
