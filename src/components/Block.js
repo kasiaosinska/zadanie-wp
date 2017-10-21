@@ -7,10 +7,10 @@ class Block extends Component {
     }
 
     render() {
-
         return (
             <div>
-                <div className='box' style={{background: this.props.color}}>
+                <div className='box' key={this.props.key}>
+                    {this.props.text}
                 </div>
             </div>
         )
