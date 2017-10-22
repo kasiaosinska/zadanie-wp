@@ -2,14 +2,10 @@ import React, {Component} from 'react';
 import './style/block.css';
 
 class Block extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>
-                <div className='box' key={this.props.key}>
+                <div className='box'>
                     {this.props.text}
                 </div>
             </div>
@@ -17,4 +13,4 @@ class Block extends Component {
     }
 }
 
-export default Block
+export default Block;

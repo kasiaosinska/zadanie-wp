@@ -4,7 +4,7 @@ import Observer from '@researchgate/react-intersection-observer';
 
 import Block from './Block';
 
-class Jokes extends Component{
+class Jokes extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,13 +13,10 @@ class Jokes extends Component{
     }
 
     handleIntersection = (event) => {
-        let logo = document.querySelector('.logo');
-        // let joke = document.getElementsByClassName('box').innerText;
-        // let check = joke.includes(' can ', 0);
-        //
-        // console.log(joke);
+        let logo = document.querySelector('.logo'),
+            showLogo = event.target.innerText.includes(' can ', 0);
 
-        if(event.isIntersecting) {
+        if(event.isIntersecting && showLogo) {
             logo.style.display = 'block';
         }
         else {
@@ -45,8 +42,8 @@ class Jokes extends Component{
 
         const jokeList = this.state.jokes.map((el) => {
             return (
-                <Observer {...options}>
-                    <Block text={el.joke} key={el.id}/>
+                <Observer {...options} key={el.id}>
+                    <Block text={el.joke}/>
                 </Observer>
             )
         });

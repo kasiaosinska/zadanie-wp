@@ -5,10 +5,6 @@ import Logo from './components/Logo';
 import Jokes from './components/Jokes';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div classID="App">
