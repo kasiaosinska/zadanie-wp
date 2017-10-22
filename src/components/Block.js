@@ -5,7 +5,7 @@ class Block extends Component {
     render() {
         return (
             <div>
-                <div className='box'>
+                <div className="box">
                     {this.props.text}
                 </div>
             </div>

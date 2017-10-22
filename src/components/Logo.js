@@ -6,8 +6,8 @@ class Logo extends Component {
     render() {
         return (
             <div>
-                <div className='box-logo'>
-                    <img className="logo" src={LogoImg} alt="logo"/>
+                <div className="box-logo">
+                    <img className="logo" src={LogoImg} alt="logo" />
                 </div>
             </div>
         )

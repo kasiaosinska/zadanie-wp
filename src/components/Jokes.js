@@ -16,19 +16,13 @@ class Jokes extends Component {
         let logo = document.querySelector('.logo'),
             showLogo = event.target.innerText.includes(' can ', 0);
 
-        if(event.isIntersecting && showLogo) {
-            logo.style.display = 'block';
-        }
-        else {
-            logo.style.display = 'none';
-        }
+        event.isIntersecting && showLogo ? logo.classList.add('show') : logo.classList.remove('show');
     };
 
     componentDidMount() {
-        fetch(`https://api.icndb.com/jokes`)
+        fetch('https://api.icndb.com/jokes')
             .then(resp => resp.json())
-            .then(data => data.value)
-            .then(info => this.setState({jokes:info}))
+            .then(data => this.setState({ jokes: data.value }))
     }
 
     render() {
@@ -36,7 +30,7 @@ class Jokes extends Component {
         const options = {
             onChange: this.handleIntersection,
             root: null,
-            rootMargin: "0px",
+            rootMargin: '0px',
             threshold: 0
         };
 
